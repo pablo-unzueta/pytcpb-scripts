@@ -9,8 +9,8 @@ import time
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--tcfile", type=str, default="s0.inp", help="TeraChem input file")
-parser.add_argument("--xyzfile", type=str, help="xyz file to read in")
+parser.add_argument("--tcfile", type=str, default="s0.inp", help="TeraChem input file", required=True)
+parser.add_argument("--xyzfile", type=str, help="xyz file to read in", required=True)
 parser.add_argument("--port", type=int, default=8080, help="TeraChem server port")
 
 args = parser.parse_args()
