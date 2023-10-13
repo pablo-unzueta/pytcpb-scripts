@@ -53,7 +53,9 @@ status = tc.setup(str(tcfile), qmattypes)
 if status == 0:
     print("TC setup completed with success.")
 elif status == 1:
-    raise ValueError("No options read from TC input file or mismatch in the input options!")
+    raise ValueError(
+        "No options read from TC input file or mismatch in the input options!"
+    )
 elif status == 2:
     raise ValueError("Failed to setup TC.")
 else:
@@ -84,7 +86,6 @@ for i, structure in enumerate(structures):
     elif status == 2:
         raise ValueError("Error in compute_energy_gradient.")
     else:
-        raise ValueError("Status on compute_energy_gradient function is not recognized!")
-
-# Delete variables that have been allocated
-del qmattypes, qmcoords, qmgrad
+        raise ValueError(
+            "Status on compute_energy_gradient function is not recognized!"
+        )
